@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- MyTube branding overrides — merge these into strings.xml or keep as reference -->
+<resources>
+    <string name="app_name" translatable="false">MyTube</string>
+    <string name="audio_only_mode_summary">Turn MyTube into a music player</string>
+    <string name="welcome">Welcome to MyTube! To get started, please select a synchronization mode below to decide whether to synchronize your user data across devices.</string>
+    <string name="libretube_sync_server">MyTube sync server</string>
+    <string name="sync_server_url">URL to MyTube sync server</string>
+</resources>

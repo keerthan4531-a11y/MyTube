@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000">
+
+    <!-- Thumbnail Background (shown while loading or as fallback) -->
+    <ImageView
+        android:id="@+id/shortThumbnail"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop" />
+
+    <!-- Video Player View -->
+    <androidx.media3.ui.PlayerView
+        android:id="@+id/shortPlayerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:resize_mode="zoom"
+        app:use_controller="false" />
+
+    <!-- Dark gradient overlay for bottom text contrast -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="280dp"
+        android:layout_gravity="bottom"
+        android:background="@drawable/bottom_player_shadow" />
+
+    <!-- Right Side Actions Column -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="90dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <!-- Like Button -->
+        <ImageView
+            android:id="@+id/shortLikeBtn"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="?selectableItemBackgroundBorderless"
+            android:padding="6dp"
+            android:src="@drawable/ic_thumb_up"
+            app:tint="#FFFFFF" />
+
+        <TextView
+            android:id="@+id/shortLikeCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="16dp"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            tools:text="120K" />
+
+        <!-- Dislike Button -->
+        <ImageView
+            android:id="@+id/shortDislikeBtn"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="?selectableItemBackgroundBorderless"
+            android:padding="6dp"
+            android:rotation="180"
+            android:src="@drawable/ic_thumb_up"
+            app:tint="#FFFFFF" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="16dp"
+            android:text="Dislike"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <!-- Comments Button -->
+        <ImageView
+            android:id="@+id/shortCommentsBtn"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="?selectableItemBackgroundBorderless"
+            android:padding="6dp"
+            android:src="@drawable/ic_comment"
+            app:tint="#FFFFFF" />
+
+        <TextView
+            android:id="@+id/shortCommentCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="16dp"
+            android:text="Comments"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <!-- Share Button -->
+        <ImageView
+            android:id="@+id/shortShareBtn"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="?selectableItemBackgroundBorderless"
+            android:padding="6dp"
+            android:src="@drawable/ic_share"
+            app:tint="#FFFFFF" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="16dp"
+            android:text="Share"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <!-- Open in Full Player / More Button -->
+        <ImageView
+            android:id="@+id/shortMoreBtn"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:background="?selectableItemBackgroundBorderless"
+            android:padding="6dp"
+            android:src="@drawable/ic_three_dots"
+            app:tint="#FFFFFF" />
+    </LinearLayout>
+
+    <!-- Bottom Left Metadata Info (Channel & Title) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|start"
+        android:layout_marginStart="14dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginBottom="85dp"
+        android:orientation="vertical">
+
+        <!-- Channel Row with Avatar, Name, Subscribe -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                app:cardCornerRadius="18dp"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="@android:color/transparent">
+
+                <ImageView
+                    android:id="@+id/shortChannelAvatar"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop" />
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/shortChannelName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                tools:text="@ChannelName" />
+
+            <!-- Liquid Glass Subscribe Pill -->
+            <com.example.liquidglass.LiquidGlassView
+                android:id="@+id/shortSubscribeGlass"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                app:cornerRadius="16dp"
+                app:glassMaterial="regular"
+                app:refractionHeight="8dp"
+                app:bevelWidth="12dp">
+
+                <TextView
+                    android:id="@+id/shortSubscribeText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#FF0000"
+                    android:paddingHorizontal="12dp"
+                    android:paddingVertical="5dp"
+                    android:text="Subscribe"
+                    android:textColor="#FFFFFF"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+            </com.example.liquidglass.LiquidGlassView>
+
+        </LinearLayout>
+
+        <!-- Video Title / Caption -->
+        <TextView
+            android:id="@+id/shortTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:textColor="#FFFFFF"
+            android:textSize="13.5sp"
+            tools:text="Video title with #shorts and viral trending tags" />
+
+        <!-- Sound / Audio track indicator -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:src="@drawable/ic_audio"
+                app:tint="#DDFFFFFF" />
+
+            <TextView
+                android:id="@+id/shortSoundTrack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:ellipsize="marquee"
+                android:singleLine="true"
+                android:text="Original Sound • MyTube Audio"
+                android:textColor="#DDFFFFFF"
+                android:textSize="11.5sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Play/Pause Centered State Flash Icon -->
+    <ImageView
+        android:id="@+id/shortPausePlayIcon"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_gravity="center"
+        android:background="@drawable/circle"
+        android:backgroundTint="#80000000"
+        android:padding="16dp"
+        android:src="@drawable/ic_play_filled"
+        android:visibility="gone"
+        app:tint="#FFFFFF" />
+
+</FrameLayout>

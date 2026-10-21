@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:colorBackground"
+    tools:context=".ui.fragments.LibraryFragment">
+
+    <com.github.libretube.ui.views.CustomSwipeToRefresh
+        android:id="@+id/playlist_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="80dp">
+
+                <!-- Glass User Profile Banner -->
+                <com.example.liquidglass.LiquidGlassView
+                    android:id="@+id/profile_glass_card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="14dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="8dp"
+                    app:cornerRadius="20dp"
+                    app:glassMaterial="regular"
+                    app:refractionHeight="16dp"
+                    app:bevelWidth="28dp"
+                    app:dispersionStrength="0.12"
+                    app:sensorHighlight="true"
+                    app:adaptiveTint="true">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/profile_card"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:cardCornerRadius="20dp"
+                        app:cardElevation="0dp"
+                        app:strokeWidth="1.2dp"
+                        app:strokeColor="#3300E5FF"
+                        app:cardBackgroundColor="#CC131622">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="18dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <!-- User DP with glowing cyan border -->
+                                <com.google.android.material.card.MaterialCardView
+                                    android:layout_width="56dp"
+                                    android:layout_height="56dp"
+                                    app:cardCornerRadius="28dp"
+                                    app:cardElevation="2dp"
+                                    app:strokeWidth="2dp"
+                                    app:strokeColor="#00E5FF"
+                                    app:cardBackgroundColor="#1A2035">
+
+                                    <ImageView
+                                        android:id="@+id/profile_avatar_image"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:padding="10dp"
+                                        android:scaleType="fitCenter"
+                                        android:src="@drawable/ic_user_avatar"
+                                        android:contentDescription="User Account" />
+                                </com.google.android.material.card.MaterialCardView>
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="14dp"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/profile_title"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="You"
+                                        android:textColor="#FFFFFF"
+                                        android:textSize="20sp"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:id="@+id/profile_subtitle"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="2dp"
+                                        android:text="Local Account • Library &amp; History"
+                                        android:textColor="#00E5FF"
+                                        android:textSize="12sp"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <!-- Quick Navigation Buttons inside Profile -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="16dp"
+                                android:orientation="horizontal">
+
+                                <com.google.android.material.button.MaterialButton
+                                    android:id="@+id/profile_settings_btn"
+                                    style="@style/Widget.Material3.Button.TonalButton"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="6dp"
+                                    android:layout_weight="1"
+                                    android:backgroundTint="#2000E5FF"
+                                    android:text="Settings"
+                                    android:textColor="#00E5FF"
+                                    app:cornerRadius="12dp"
+                                    app:icon="@drawable/ic_settings"
+                                    app:iconTint="#00E5FF" />
+
+                                <com.google.android.material.button.MaterialButton
+                                    android:id="@+id/profile_about_btn"
+                                    style="@style/Widget.Material3.Button.TonalButton"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="6dp"
+                                    android:layout_weight="1"
+                                    android:backgroundTint="#25E1306C"
+                                    android:text="About App"
+                                    android:textColor="#E1306C"
+                                    app:cornerRadius="12dp"
+                                    app:icon="@drawable/ic_info"
+                                    app:iconTint="#E1306C" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+                </com.example.liquidglass.LiquidGlassView>
+
+                <!-- History and Downloads Quick Buttons -->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="14dp"
+                    android:layout_marginVertical="6dp"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/watch_history"
+                        style="@style/Widget.Material3.Button.TonalButton"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="6dp"
+                        android:ellipsize="marquee"
+                        android:maxLines="1"
+                        android:text="@string/watch_history"
+                        android:textAlignment="viewStart"
+                        android:textStyle="bold"
+                        app:cornerRadius="14dp"
+                        app:icon="@drawable/ic_time_outlined"
+                        app:layout_constraintEnd_toStartOf="@id/downloads"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="Watch History" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/downloads"
+                        style="@style/Widget.Material3.Button.TonalButton"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="6dp"
+                        android:ellipsize="marquee"
+                        android:maxLines="1"
+                        android:text="@string/downloads"
+                        android:textStyle="bold"
+                        app:cornerRadius="14dp"
+                        app:icon="@drawable/ic_download"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/watch_history"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <!-- Playlists Section -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="14dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:maxLines="1"
+                            android:paddingVertical="8dp"
+                            android:text="@string/playlists"
+                            android:textAlignment="viewStart"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/sortTV"
+                            style="?materialButtonTonalStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="end"
+                            android:maxLines="1"
+                            android:paddingHorizontal="10dp"
+                            android:text="@string/creation_date"
+                            android:tooltipText="@string/tooltip_sort"
+                            app:cornerRadius="10dp"
+                            app:icon="@drawable/ic_sort"
+                            app:iconGravity="textEnd" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/nothing_here"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginVertical="30dp"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:layout_marginBottom="12dp"
+                            android:src="@drawable/ic_list"
+                            app:tint="?android:attr/textColorSecondary" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/emptyList"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/playlist_recView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:nestedScrollingEnabled="false" />
+
+                </LinearLayout>
+
+                <!-- Bookmarks Section -->
+                <LinearLayout
+                    android:id="@+id/bookmarksContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="14dp"
+                        android:paddingVertical="8dp"
+                        android:text="@string/bookmarks"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/bookmarks_recView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:nestedScrollingEnabled="false" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+    </com.github.libretube.ui.views.CustomSwipeToRefresh>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/create_playlist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp"
+        android:tooltipText="@string/tooltip_create_playlist"
+        app:backgroundTint="#00E5FF"
+        app:srcCompat="@drawable/ic_add"
+        app:tint="#000000" />
+
+</FrameLayout>

@@ -1,0 +1,444 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0C0D14">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="40dp">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true"
+            app:navigationIcon="?homeAsUpIndicator"
+            app:navigationIconTint="#00E5FF"
+            app:title="About MyTube"
+            app:titleTextColor="#FFFFFF" />
+
+        <!-- App Hero Section -->
+        <LinearLayout
+            android:id="@+id/heroSection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingHorizontal="20dp"
+            android:paddingTop="20dp"
+            android:paddingBottom="16dp">
+
+            <ImageView
+                android:id="@+id/appLogo"
+                android:layout_width="96dp"
+                android:layout_height="96dp"
+                android:src="@drawable/mytube_icon"
+                android:contentDescription="@string/app_name" />
+
+            <TextView
+                android:id="@+id/appTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:text="MyTube"
+                android:textColor="#FFFFFF"
+                android:textSize="32sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.04" />
+
+            <TextView
+                android:id="@+id/appTagline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Futuristic Cyber-Tech Video Client"
+                android:textColor="#00E5FF"
+                android:textSize="13sp"
+                android:letterSpacing="0.06"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/versionText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/cyber_badge_bg"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="4dp"
+                android:textColor="#A0B0D0"
+                android:textSize="11sp"
+                tools:text="Version 32.1 • Cyber Edition" />
+        </LinearLayout>
+
+        <!-- Creator Profile Glass Card -->
+        <com.example.liquidglass.LiquidGlassView
+            android:id="@+id/creatorGlassView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="8dp"
+            app:cornerRadius="18dp"
+            app:glassMaterial="regular"
+            app:refractionHeight="16dp"
+            app:bevelWidth="24dp"
+            app:dispersionStrength="0.10"
+            app:sensorHighlight="true"
+            app:adaptiveTint="true">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/creatorCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="18dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="1.5dp"
+                app:strokeColor="#3300E5FF"
+                app:cardBackgroundColor="#CC131622">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="18dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="APP CREATOR"
+                        android:textColor="#00E5FF"
+                        android:textSize="11sp"
+                        android:letterSpacing="0.1"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <!-- Creator Avatar DP -->
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="66dp"
+                            android:layout_height="66dp"
+                            app:cardCornerRadius="33dp"
+                            app:cardElevation="4dp"
+                            app:strokeWidth="2.5dp"
+                            app:strokeColor="#00E5FF"
+                            app:cardBackgroundColor="#000000">
+
+                            <ImageView
+                                android:id="@+id/creatorAvatar"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/creator_avatar"
+                                android:contentDescription="mokka coding avatar" />
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/creatorName"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="mokka coding"
+                                android:textColor="#FFFFFF"
+                                android:textSize="21sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/creatorRole"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:text="Lead Developer &amp; Architect"
+                                android:textColor="#8F9CAE"
+                                android:textSize="13sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="6dp"
+                                android:background="@drawable/cyber_badge_bg"
+                                android:paddingHorizontal="8dp"
+                                android:paddingVertical="2dp"
+                                android:text="VERIFIED CREATOR"
+                                android:textColor="#00E5FF"
+                                android:textSize="10sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+        </com.example.liquidglass.LiquidGlassView>
+
+        <!-- Instagram Profile Glass Card -->
+        <com.example.liquidglass.LiquidGlassView
+            android:id="@+id/instagramGlassView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            app:cornerRadius="18dp"
+            app:glassMaterial="regular"
+            app:refractionHeight="16dp"
+            app:bevelWidth="24dp"
+            app:dispersionStrength="0.10"
+            app:sensorHighlight="true"
+            app:adaptiveTint="true">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/instagramCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="18dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="1.5dp"
+                app:strokeColor="#4DE1306C"
+                app:cardBackgroundColor="#CC171320">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="18dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="CONNECT WITH CREATOR"
+                    android:textColor="#E1306C"
+                    android:textSize="11sp"
+                    android:letterSpacing="0.1"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <!-- Instagram DP -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="66dp"
+                        android:layout_height="66dp"
+                        app:cardCornerRadius="33dp"
+                        app:cardElevation="4dp"
+                        app:strokeWidth="2.5dp"
+                        app:strokeColor="#E1306C"
+                        app:cardBackgroundColor="#000000">
+
+                        <ImageView
+                            android:id="@+id/instaAvatar"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/insta_dp"
+                            android:contentDescription="Instagram DP" />
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="dark.shadow_4531"
+                            android:textColor="#FFFFFF"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="16dp"
+                                android:layout_height="16dp"
+                                android:src="@drawable/ic_instagram"
+                                android:contentDescription="Instagram icon" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="6dp"
+                                android:text="Follow on Instagram"
+                                android:textColor="#E1306C"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:text="Tap to open profile →"
+                            android:textColor="#7A8499"
+                            android:textSize="11sp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+        </com.example.liquidglass.LiquidGlassView>
+
+        <!-- Features Highlight Card -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/featuresCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            app:cardCornerRadius="18dp"
+            app:cardElevation="6dp"
+            app:strokeWidth="1.5dp"
+            app:strokeColor="#3300E5FF"
+            app:cardBackgroundColor="#131622">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="18dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="MYTUBE EXCLUSIVE FEATURES"
+                    android:textColor="#00E5FF"
+                    android:textSize="11sp"
+                    android:letterSpacing="0.1"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:lineSpacingExtra="6dp"
+                    android:text="• Official YouTube Style Video Cards\n• Full-Width 16:9 Thumbnails &amp; Duration Pills\n• Ad-Free Experience with SponsorBlock\n• Offline Video &amp; Audio Downloads\n• Background Audio &amp; PiP Playback\n• High-Tech Cyber Dark UI Experience"
+                    android:textColor="#D0D6E4"
+                    android:textSize="13.5sp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- More Options Cards -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/website"
+            style="@style/AboutCard"
+            app:cardBackgroundColor="#131622">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/AboutItem"
+                android:text="@string/website"
+                android:textColor="#FFFFFF"
+                app:drawableStartCompat="@drawable/ic_region"
+                app:drawableTint="#00E5FF" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/github"
+            style="@style/AboutCard"
+            app:cardBackgroundColor="#131622">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/AboutItem"
+                android:text="@string/github"
+                android:textColor="#FFFFFF"
+                app:drawableStartCompat="@drawable/ic_github"
+                app:drawableTint="#00E5FF" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/license"
+            style="@style/AboutCard"
+            app:cardBackgroundColor="#131622">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/AboutItem"
+                android:text="@string/license"
+                android:textColor="#FFFFFF"
+                app:drawableStartCompat="@drawable/ic_license"
+                app:drawableTint="#00E5FF" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/device"
+            style="@style/AboutCard"
+            app:cardBackgroundColor="#131622">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/AboutItem"
+                android:text="@string/device_info"
+                android:textColor="#FFFFFF"
+                app:drawableStartCompat="@drawable/ic_device"
+                app:drawableTint="#00E5FF" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- GIF Animation Card (At the very bottom of About) -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/gifCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="14dp"
+            app:cardCornerRadius="18dp"
+            app:cardElevation="6dp"
+            app:strokeWidth="1.5dp"
+            app:strokeColor="#3300E5FF"
+            app:cardBackgroundColor="#131622">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:text="CYBER ANIMATION"
+                    android:textColor="#00E5FF"
+                    android:textSize="11sp"
+                    android:letterSpacing="0.1"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/gifView"
+                    android:layout_width="match_parent"
+                    android:layout_height="220dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/lmeb"
+                    android:contentDescription="MyTube Cyber Animation" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+
+</ScrollView>
